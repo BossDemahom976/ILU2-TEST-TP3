@@ -3,10 +3,17 @@ package ilu2;
 public class Welcome {
 	
 	public static String welcome(String input) {
-		String bonjour = "Hello, my friend";
+		StringBuilder bonjour = new StringBuilder("Hello, ");
 		if(input != null && input.trim() != "") {
-			bonjour = "Hello, " + input.substring(0, 1).toUpperCase() + input.substring(1);
+			if(input.equals(input.toUpperCase())) {
+				bonjour.delete(0, bonjour.toString().length());
+				bonjour.append("HELLO, " + input + " !");
+			}else {
+				bonjour.append(input.substring(0, 1).toUpperCase() + input.substring(1));
+			}
+		}else if(input == null || input.trim() == "") {
+			bonjour.append("my friend");
 		}
-		return bonjour;
+		return bonjour.toString();
 	}
 }
