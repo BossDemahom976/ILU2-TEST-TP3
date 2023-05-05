@@ -54,6 +54,14 @@ class WelcomeTest {
 	@Test
 	void exigence8() {
 		assertEquals(Welcome.welcome("bob      , amy "), "Hello, Bob and Amy");
+		assertEquals(Welcome.welcome("bob      ,          amy           , jon"), "Hello, Bob, Amy and Jon");
 	}
 	
+	@Test
+	void exigence9() {
+		assertEquals(Welcome.welcome("bob, JERRY, amy, bob, JERRY, bob"), "Hello, Bob (x3) and Amy. AND HELLO, JERRY (x2) !");
+		assertEquals(Welcome.welcome("BOB, JERRY, amy, BOB, JERRY, bob"), "Hello, Amy. AND HELLO, BOB (x3) AND JERRY (x2) !");
+		assertEquals(Welcome.welcome("MARTIN, JERRY, BOB, bob, marie, amy, AMY"), "Hello, Marie and Amy (x2). AND HELLO, MARTIN, JERRY AND BOB (x2) !");
+		assertEquals(Welcome.welcome("MARTIN, amy, amy"), "Hello, Amy (x2). AND HELLO, MARTIN !");
+	}
 }
