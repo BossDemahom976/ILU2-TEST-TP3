@@ -9,8 +9,10 @@ public class Welcome {
 		}else {
 			String[] noms = input.trim().split(",");
 			if(noms.length > 1) {
-				bonjour.append("Hello, " + noms[0].substring(0, 1).toUpperCase() + noms[0].substring(1));
-				bonjour.append(", " + noms[1].trim().substring(0, 1).toUpperCase() + noms[1].trim().substring(1));
+				bonjour.append("Hello");
+				for(int i= 0; i < noms.length; i++) {
+				bonjour.append(", " + noms[i].trim().substring(0, 1).toUpperCase() + noms[i].trim().substring(1));
+				}
 			}
 			else if(input.equals(input.toUpperCase())) {
 				bonjour.append("HELLO, " + input + " !");
