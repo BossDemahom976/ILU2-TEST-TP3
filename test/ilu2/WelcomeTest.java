@@ -23,4 +23,10 @@ class WelcomeTest {
 	void exigence3() {
 		assertEquals(Welcome.welcome("JERRY"), "HELLO, JERRY !");
 	}
+	
+	@Test
+	void exigence4() {
+		assertEquals(Welcome.welcome("amy,bob"), "Hello, Amy, Bob");
+		assertEquals(Welcome.welcome("amy, bob"), "Hello, Amy, Bob");
+	}
 }
